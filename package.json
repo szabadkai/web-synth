@@ -1,0 +1,17 @@
+{
+  "name": "web-synth",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm --workspace=@web-synth/web run dev",
+    "build": "npm --workspace=@web-synth/web run build",
+    "preview": "npm --workspace=@web-synth/web run preview",
+    "lint": "npm --workspace=@web-synth/web run lint",
+    "format": "npm --workspace=@web-synth/web run format",
+    "test": "npm --workspace=@web-synth/web run test"
+  }
+}
+
