@@ -3,6 +3,7 @@ WebSynth Studio (MVP)
 Overview
 - React + TypeScript Vite app for a browser-based analogue synth.
 - Follows PRD, best_practices.md, and technology.md.
+- Static build published via GitHub Pages: https://lszabadkai.github.io/web-synth/
 
 Monorepo
 - Root `package.json` uses npm workspaces: `apps/*`.
@@ -29,4 +30,3 @@ Next Steps
 - Add more modules (filters, envelope, LFO).
 - Persist patches in localStorage; export/import JSON.
 - Add MIDI input and basic preset browser.
-
