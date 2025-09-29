@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom';
+import '@testing-library/jest-dom/vitest';
 
 // Provide a very small stub for Web Audio to avoid reference errors in tests
 class AudioContextStub {

@@ -24,7 +24,11 @@ export function useMidi(
       access.inputs.forEach((input) => {
         inputs.push({ id: input.id, name: input.name || input.id });
         input.onmidimessage = (ev) => {
-          const [status, data1, data2] = ev.data;
+          const message = ev.data;
+          if (!message) return;
+          const status = message[0] ?? 0;
+          const data1 = message[1] ?? 0;
+          const data2 = message[2] ?? 0;
           const cmd = status & 0xf0;
           if (cmd === 0x90 && data2 > 0) {
             // note on

@@ -18,7 +18,7 @@ export default function Waveform({
 }: Props) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const rafRef = useRef<number | null>(null);
-  const bufferRef = useRef<Uint8Array | null>(null);
+  const bufferRef = useRef<Uint8Array<ArrayBuffer> | null>(null);
   const [cw, setCw] = useState<number>(width ?? 600);
 
   useEffect(() => {
@@ -65,7 +65,7 @@ export default function Waveform({
 
       const bins = analyser.frequencyBinCount;
       if (!bufferRef.current || bufferRef.current.length !== bins) {
-        bufferRef.current = new Uint8Array(bins);
+        bufferRef.current = new Uint8Array(new ArrayBuffer(bins));
       }
       const data = bufferRef.current;
       analyser.getByteTimeDomainData(data);
